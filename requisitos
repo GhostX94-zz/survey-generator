@@ -1,0 +1,8 @@
+1) Creacion Login - acceso a usuarios permite crear cuenta del mismo
+2) Modulo de administracion de Usuarios
+3) pantalla de encuestas a elegir (donde aparece un dropdown a elegir tipo de encuesta (abiertas, cerradas, mixtas)
+abiertas = cajas de texto
+cerradas = radio buttons
+ mixtas = una mezcla de los dos usando un algoritmo randmon donde ya sea que se generen 7 de una y 8 de otra para que la suma total sea 15
+4) Generar pdf de la encuesta
+
