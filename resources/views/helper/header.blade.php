@@ -257,8 +257,8 @@
                                                 <img src="assets/images/avatars/thumb-13.jpg" alt="">
                                             </div>
                                             <div class="info">
-                                                <span class="title text-semibold">Marshall Nichols</span>
-                                                <span class="sub-title">UI/UX Desinger</span>
+                                                <span class="title text-semibold">{{ Auth::user()->name }}</span>
+                                                <span class="sub-title">_______________</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -267,26 +267,26 @@
                                 <li>
                                     <a href="#">
                                         <i class="ti-settings p-r-10"></i>
-                                        <span>Setting</span>
+                                        <span>Configuración</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
                                         <i class="ti-user p-r-10"></i>
-                                        <span>Profile</span>
+                                        <span>Perfil</span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
                                         <i class="ti-email p-r-10"></i>
-                                        <span>Inbox</span>
+                                        <span>Coreo</span>
                                         <span class="badge badge-pill badge-success pull-right">2</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{!!URL::to('/logout')!!}">
                                         <i class="ti-power-off p-r-10"></i>
-                                        <span>Logout</span>
+                                        <span>Salir</span>
                                     </a>
                                 </li>
                             </ul>

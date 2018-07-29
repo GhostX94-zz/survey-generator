@@ -35,7 +35,7 @@
                     <div class="col-md-7 d-none d-md-block">
                         <img class="img-fluid" src="assets/images/logo/logo2.png" alt="">
                         <div class="m-t-15 m-l-20">
-                            <h1 class="font-weight-light font-size-35 text-white">!BIENVENIDO!</h1>
+                            <h2 class="font-weight-light font-size-35 text-white"><strong>!BIENVENIDO!</strong></h2>
                         </div>
                     </div>
                     <div class="col-md-5">

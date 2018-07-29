@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('_Layout');
 });
 
+Route::get('/logout',function(){
+    Auth::logout();
+    return view('auth.login');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
