@@ -19,23 +19,30 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                    <form role="form" id="form-validation">
+                                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                                        @csrf
                                     <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label control-label">Nombre *</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Requerido *">
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="Requerido *" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label control-label">Usuario *</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Requerido *">
+                                                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Requerido *" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-sm-2 col-form-label control-label">Contraseña *</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Requerido *">
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Requerido *" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label control-label">Confirmar Contraseña *</label>
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" name="password_confirmation" id="password-confirm" placeholder="Requerido *" required>
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-gradient-success">Guardar</button>
