@@ -55,6 +55,7 @@
                                         <button type="submit" class="btn btn-block btn-lg btn-gradient-success">Entrar</button>
                                         
                                     </form>
+                                    <a href="register" class="m-b-15 font-size-13" align="center">Registrarse</a>
                                 </div>
                             </div>
                         </div>

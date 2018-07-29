@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'ENCUESTA'),
+    'name' => env('APP_NAME', 'ENCUSTADOR ONLINE'),
 
     /*
     |--------------------------------------------------------------------------
