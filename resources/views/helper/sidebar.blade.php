@@ -5,7 +5,7 @@
                         <li class="side-nav-header">
                             <span>Principal</span>
                         </li>
-                        <li class="nav-item dropdown open">
+                        <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
                                     <i class="mdi mdi-gauge"></i>
@@ -17,7 +17,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="active">
-                                    <a href="#">Crear Encuesta</a>
+                                    <a href="home">Crear Encuesta</a>
                                 </li>
                             </ul>
                         </li>
@@ -33,10 +33,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="email.html">Crear Usuarios</a>
+                                    <a href="getUsuario">Crear Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="email.html">Ver Usuarios</a>
+                                    <a href="verUsuario">Ver Usuarios</a>
                                 </li>
                             </ul>
                         </li>

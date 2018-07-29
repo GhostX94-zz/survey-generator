@@ -1,3 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::Inicio::</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" href="assets/images/logo/apple-touch-icon.html">
+    <link rel="shortcut icon" href="assets/images/logo/logo2.png">
+
+    <!-- core dependcies css -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/vendor/PACE/themes/blue/pace-theme-minimal.css" />
+    <link rel="stylesheet" href="assets/vendor/perfect-scrollbar/css/perfect-scrollbar.min.css" />
+
+    <!-- page css -->
+
+    <!-- core css -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app header-default side-nav-dark">
+        <div class="layout">
 <!-- Header START -->
 <div class="header navbar">
                 <div class="header-container">

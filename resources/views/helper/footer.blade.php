@@ -10,3 +10,17 @@
                     </div>
                 </footer>
                 <!-- Footer END -->
+                </div>
+    </div>
+
+    <script src="assets/js/vendor.js"></script>
+
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- page js -->
+    <script src="assets/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="assets/vendor/jquery.sparkline/jquery.sparkline.min.js"></script>
+    
+
+</body>
+</html>

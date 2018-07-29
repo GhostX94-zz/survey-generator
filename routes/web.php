@@ -20,6 +20,11 @@ Route::get('/logout',function(){
     return view('auth.login');
 });
 
+Route::get('/getUsuario','Usuarios\UsuariosController@index')->name('getUsuario');
+Route::get('/verUsuario','Usuarios\UsuariosController@verUsuarios')->name('verUsuario');
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
+
