@@ -21,7 +21,8 @@
              <th scope="col">#</th>
              <th scope="col">Nombre</th>
              <th scope="col">Correo Electrónico</th>
-             <th scope="col">Contraseña</th>
+             <th scope="col">Editar</th>
+             <th scope="col">Eliminar</th>
         </tr>
         </thead>
            <tbody>
@@ -30,12 +31,13 @@
           <th scope="row">{{$item->id}}</th>
           <td>{{$item->name}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$item->password}}</td>
+          <td><input type="button"  value="Editar" class="btn btn-warning" /></td>
+          <td><input type="button"  value="Eliminar" class="btn btn-danger" /></td>
        </tr>
         @endforeach
       </tbody>
        </table>
-       </div>  
+       </div>
     </div>
     </div>
     </div>
