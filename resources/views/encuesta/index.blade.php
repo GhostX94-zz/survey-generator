@@ -65,7 +65,7 @@ font-weight: normal;
         $('#btCerrada').click(function() {
             if (iCnt2 <= 14) {
                 iCnt2 = iCnt2 + 1;
-            $(container).append('<input type=radio name="optradio" id=tbt' + iCnt2 +'" />');
+            $(container).append('<input type=radio id='+iCnt2+' />');
             }
                             if (iCnt2 == 1) {
 
