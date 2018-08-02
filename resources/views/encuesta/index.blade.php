@@ -29,7 +29,7 @@ font-weight: normal;
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="#" id="btCerrada">Cerradas</a></li>
         <li><a href="#" id="btAdd">Abiertas</a></li>
-        <li><a href="#" id="btMixtas">Mixtas</a></li>
+        <li><a href="#" id="btMixtas" onclick="alert('Alterne las opciones anteriores para poder generar campos mixtos');">Mixtas</a></li>
         <li role="separator" class="divider"></li>
     </ul>
     </div>
@@ -37,11 +37,12 @@ font-weight: normal;
 <div class="card-body">
 <div class="row">
  <div class="col-sm-8">
+    <form>
      <div id="main">
         <!--<input type="button" id="btAdd" value="Añadir Pregunta" class="bt btn btn-warning" />-->
         <div id="result" class="col-sm-12"></div>
-
     <div>
+    </form>
     <input type="button" id="generar" value="Generar PDF" onclick="GetTextValue();" class="bt btn btn-success" />
     <input type="button" id="limpiar" value="Limpiar pantalla" onclick="LimpiarPantalla();" class="bt btn btn-danger" />
   </div>
