@@ -40,7 +40,10 @@ font-weight: normal;
      <div id="main">
         <!--<input type="button" id="btAdd" value="Añadir Pregunta" class="bt btn btn-warning" />-->
         <div id="result" class="col-sm-12"></div>
+
     <div>
+    <input type="button" id="generar" value="Generar PDF" onclick="GetTextValue();" class="bt btn btn-success" />
+    <input type="button" id="limpiar" value="Limpiar pantalla" onclick="LimpiarPantalla();" class="bt btn btn-danger" />
   </div>
     </div>
      </div>
@@ -59,21 +62,24 @@ font-weight: normal;
             padding: '0px', margin: '20px', width: '190px', border: '0px dashed',
             borderTopColor: '#999', borderBottomColor: '#999',
             borderLeftColor: '#999', borderRightColor: '#999'
-        });
+        }).attr("id", "contenedor");
 
 
         $('#btCerrada').click(function() {
             if (iCnt2 <= 14) {
                 iCnt2 = iCnt2 + 1;
             $(container).append('<input type=radio id='+iCnt2+' />');
+            $(container).append('<input type=text class="input" id=tb' + iCnt + ' ' +
+                            'value="Pregunta Cerrada ' + iCnt + '" />');
             }
-                            if (iCnt2 == 1) {
+              if (iCnt2 == 1) {
 
             var divSubmit2 = $(document.createElement('div'));
-            $(divSubmit2).append('<input type=button class="bt btn btn-success" onclick="GetTextValue()"' +
-                           'id=btSubmit value=Generar PDF />');
+            /*$(divSubmit2).append('<input type=button class="btc btn btn-success" onclick="GetTextValue()"' +
+                           'id=btSubmit value=Generar PDF />');*/
 
                }
+               $('#main').after(container, divSubmit2);
         });
         $('#btAdd').click(function() {
             if (iCnt <= 14) {
@@ -87,8 +93,8 @@ font-weight: normal;
                 if (iCnt == 1) {
 
  var divSubmit = $(document.createElement('div'));
-                    $(divSubmit).append('<input type=button class="bt btn btn-success" onclick="GetTextValue()"' +
-                            'id=btSubmit value=Enviar />');
+                /*$(divSubmit).append('<input type=button class="bt btn btn-success" onclick="GetTextValue()"' +
+                            'id=btSubmit value=Generar Encuesta />');*/
 
                 }
 
@@ -146,5 +152,12 @@ font-weight: normal;
         $(divValue).append('<p><b>Tus valores de la encuesta son: </b></p>' + values);
         $('#result').append(divValue);
 
+    }
+
+    function LimpiarPantalla(){
+        $("#contenedor").empty();
+            $("#contenedor").remove();
+            iCnt = 0;
+            iCnt2=0;
     }
 </script>

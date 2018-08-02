@@ -32,9 +32,9 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
+                               <!-- <li>
                                     <a href="getUsuario">Crear Usuarios</a>
-                                </li>
+                                </li>-->
                                 <li>
                                     <a href="verUsuario">Ver Usuarios</a>
                                 </li>
