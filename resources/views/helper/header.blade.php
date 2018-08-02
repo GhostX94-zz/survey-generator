@@ -309,7 +309,7 @@
                                 <li>
                                     <a href="#">
                                         <i class="ti-email p-r-10"></i>
-                                        <span>Coreo</span>
+                                        <span>Correo</span>
                                         <span class="badge badge-pill badge-success pull-right">2</span>
                                     </a>
                                 </li>

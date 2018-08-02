@@ -43,7 +43,7 @@ font-weight: normal;
         <div id="result" class="col-sm-12"></div>
     <div>
     </form>
-    <input type="button" id="generar" value="Generar PDF" onclick="GetTextValue();" class="bt btn btn-success" />
+    <input type="button" id="generar" value="Generar PDF" onclick="GetTextValue(); alert('PDF en proceso....')" class="bt btn btn-success" />
     <input type="button" id="limpiar" value="Limpiar pantalla" onclick="LimpiarPantalla();" class="bt btn btn-danger" />
   </div>
     </div>
