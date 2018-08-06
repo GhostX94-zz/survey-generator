@@ -23,7 +23,7 @@
   <div class="col-md-6">
                      <div class="form-group">
                          <label class="control-label"><b>Titulo</b></label>
-                         <input type="text" id=titulo" class="form-control">
+                         <input type="text" id="titulo" class="form-control">
                      </div>
                  </div>
     <div class="dropdown col-md-6">
@@ -33,7 +33,7 @@
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         @foreach($tipoEncuestas as $encuesta)
-        <li><a href="#" id="idTipoEncuesta{{$encuesta->idEncuesta}}" onclick='get(this);'>{{$encuesta->nombre}}</a></li>
+        <li><a href="#" id="{{$encuesta->nombre}}" >{{$encuesta->nombre}}</a></li>
         <li role="separator" class="divider"></li>
         @endforeach
     </ul>
@@ -41,9 +41,9 @@
  </div>
 <div class="card-body">
 <div class="row">
- <div class="col-sm-12">
+ <div class="col-sm-12" id="main">
+     @include('encuesta.abiertas')
 
-        @include('encuesta.mixtas')
 
   </div>
     </div>

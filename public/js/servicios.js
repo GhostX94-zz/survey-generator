@@ -4,7 +4,17 @@ function getEncuestaById(id) {
         this.location.pathname.replace('inicio', 'getPreguntaByTipo');
 }
 
-/*$ (document).ready (function () {});*/
+$(document).ready(function () {
+    $('#Cerradas').on('click', function (e) {
+        alert("ok");
+    });
+    $('#Abiertas').on('click', function (e) {
+        alert("lol");
+    });
+    $('#Mixtas').on('click', function (e) {
+        alert("oasdk");
+    });
+});
 var count = 0;
 
 function get(id) {
