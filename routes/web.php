@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('_Layout');
-});
+});*/
+
+Route::get('inicio','Encuesta\EncuestaController@index')->name('inicio');
 
 Route::get('/logout',function(){
     Auth::logout();
@@ -22,6 +24,9 @@ Route::get('/logout',function(){
 
 Route::get('/getUsuario','Usuarios\UsuariosController@index')->name('getUsuario');
 Route::get('/verUsuario','Usuarios\UsuariosController@verUsuarios')->name('verUsuario');
+
+Route::get('/getPreguntaByTipo/{tipo}', 'Encuesta\EncuestaController@getPreguntasByEncuestas')->name('getPreguntaByTipo');
+
 
 
 Auth::routes();

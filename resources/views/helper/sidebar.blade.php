@@ -17,7 +17,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="active">
-                                    <a href="home">Crear Encuesta</a>
+                                    <a href="inicio">Crear Encuesta</a>
                                 </li>
                             </ul>
                         </li>

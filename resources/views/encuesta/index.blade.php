@@ -1,11 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<style>
-body {
-font: 13px verdana;
-font-weight: normal;
-}
-</style>
+<script src="js/servicios.js"></script>
 <!-- Content Wrapper START -->
 <div class="main-content">
    <div class="container-fluid">
@@ -21,30 +16,32 @@ font-weight: normal;
  <div class="card">
 <div class="card-header border bottom">
  <h4 class="card-title">Crear encuesta</h4>
-    <div class="dropdown">
+</br>
+  <div class="col-md-6">
+                     <div class="form-group">
+                         <label class="control-label"><b>Titulo</b></label>
+                         <input type="text" class="form-control">
+                     </div>
+                 </div>
+    <div class="dropdown col-md-6">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Select...
+        Seleccionar...
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="#" id="btCerrada">Cerradas</a></li>
-        <li><a href="#" id="btAdd">Abiertas</a></li>
-        <li><a href="#" id="btMixtas" onclick="alert('Alterne las opciones anteriores para poder generar campos mixtos');">Mixtas</a></li>
+        @foreach($tipoEncuestas as $encuesta)
+        <li><a href="#" id="idTipoEncuesta{{$encuesta->idEncuesta}}" onclick='get(this);'>{{$encuesta->nombre}}</a></li>
         <li role="separator" class="divider"></li>
+        @endforeach
     </ul>
     </div>
  </div>
 <div class="card-body">
 <div class="row">
- <div class="col-sm-8">
-    <form>
-     <div id="main">
-        <!--<input type="button" id="btAdd" value="Añadir Pregunta" class="bt btn btn-warning" />-->
-        <div id="result" class="col-sm-12"></div>
-    <div>
-    </form>
-    <input type="button" id="generar" value="Generar PDF" onclick="GetTextValue(); alert('PDF en proceso....')" class="bt btn btn-success" />
-    <input type="button" id="limpiar" value="Limpiar pantalla" onclick="LimpiarPantalla();" class="bt btn btn-danger" />
+ <div class="col-sm-12">
+
+        @include('encuesta.mixtas')
+
   </div>
     </div>
      </div>
@@ -52,113 +49,3 @@ font-weight: normal;
         </div>
    </div>
                 <!-- Content Wrapper END -->
-<script>
-
- $(document).ready(function() {
-        var iCnt = 0;
-        var iCnt2 = 0;
-
-// Crear un elemento div añadiendo estilos CSS
-        var container = $(document.createElement('div')).css({
-            padding: '0px', margin: '20px', width: '190px', border: '0px dashed',
-            borderTopColor: '#999', borderBottomColor: '#999',
-            borderLeftColor: '#999', borderRightColor: '#999'
-        }).attr("id", "contenedor");
-
-
-        $('#btCerrada').click(function() {
-            if (iCnt2 <= 14) {
-                iCnt2 = iCnt2 + 1;
-            $(container).append('<input type=radio id='+iCnt2+' />');
-            $(container).append('<input type=text class="input" id=tb' + iCnt + ' ' +
-                            'value="Pregunta Cerrada ' + iCnt + '" />');
-            }
-              if (iCnt2 == 1) {
-
-            var divSubmit2 = $(document.createElement('div'));
-            /*$(divSubmit2).append('<input type=button class="btc btn btn-success" onclick="GetTextValue()"' +
-                           'id=btSubmit value=Generar PDF />');*/
-
-               }
-               $('#main').after(container, divSubmit2);
-        });
-        $('#btAdd').click(function() {
-            if (iCnt <= 14) {
-
-                iCnt = iCnt + 1;
-
-                // Añadir caja de texto.
-                $(container).append('<input type=text class="input" id=tb' + iCnt + ' ' +
-                            'value="Escriba su pregunta ' + iCnt + '" />');
-
-                if (iCnt == 1) {
-
- var divSubmit = $(document.createElement('div'));
-                /*$(divSubmit).append('<input type=button class="bt btn btn-success" onclick="GetTextValue()"' +
-                            'id=btSubmit value=Generar Encuesta />');*/
-
-                }
-
- $('#main').after(container, divSubmit);
-            }
-            else {      //se establece un limite para añadir elementos, 20 es el limite
-
-                $(container).append('<label>Limite Alcanzado</label>');
-                $('#btAdd').attr('class', 'bt-disable btn btn-warning');
-                $('#btAdd').attr('disabled', 'disabled');
-
-            }
-        });
-
-        $('#btRemove').click(function() {   // Elimina un elemento por click
-            if (iCnt != 0) { $('#tb' + iCnt).remove(); iCnt = iCnt - 1; }
-
-            if (iCnt == 0) { $(container).empty();
-
-                $(container).remove();
-                $('#btSubmit').remove();
-                $('#btAdd').removeAttr('disabled');
-                $('#btAdd').attr('class', 'bt btn btn-warning')
-
-            }
-        });
-
-        $('#btRemoveAll').click(function() {    // Elimina todos los elementos del contenedor
-
-            $(container).empty();
-            $(container).remove();
-            $('#btSubmit').remove(); iCnt = 0;
-            $('#btAdd').removeAttr('disabled');
-            $('#btAdd').attr('class', 'bt');
-
-        });
-    });
-
-    // Obtiene los valores de los textbox al dar click en el boton "Enviar"
-    var divValue, values = '';
-
-    function GetTextValue() {
-
-        $(divValue).empty();
-        $(divValue).remove(); values = '';
-
-        $('.input').each(function() {
-            divValue = $(document.createElement('div')).css({
-                padding:'5px', width:'200px'
-            });
-            values += this.value + '<br />'
-        });
-
-
-        $(divValue).append('<p><b>Tus valores de la encuesta son: </b></p>' + values);
-        $('#result').append(divValue);
-
-    }
-
-    function LimpiarPantalla(){
-        $("#contenedor").empty();
-            $("#contenedor").remove();
-            iCnt = 0;
-            iCnt2=0;
-    }
-</script>
