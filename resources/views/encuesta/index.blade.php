@@ -42,8 +42,22 @@
 <div class="card-body">
 <div class="row">
  <div class="col-sm-12" id="main">
-     @include('encuesta.abiertas')
 
+    <script>
+
+    switch(estado){
+     case "Abiertas":
+     <?php @include('encuesta.abiertas') ?>
+     break;
+     case "Cerradas":
+    <?php @include('encuesta.cerradas') ?>
+     break;
+     case "Mixtas":
+    <?php @include('encuesta.mixtas') ?>
+     break;
+     }
+
+    </script>
 
   </div>
     </div>

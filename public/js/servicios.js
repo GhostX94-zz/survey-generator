@@ -1,3 +1,5 @@
+var estado = "";
+
 function getEncuestaById(id) {
     var currentLocation =
         this.location.origin +
@@ -6,13 +8,13 @@ function getEncuestaById(id) {
 
 $(document).ready(function () {
     $('#Cerradas').on('click', function (e) {
-        alert("ok");
+        estado = "Cerradas";
     });
     $('#Abiertas').on('click', function (e) {
-        alert("lol");
+        estado = "Abiertas";
     });
     $('#Mixtas').on('click', function (e) {
-        alert("oasdk");
+        estado = "Mixtas";
     });
 });
 var count = 0;
