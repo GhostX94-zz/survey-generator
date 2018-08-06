@@ -1,6 +1,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="js/servicios.js"></script>
+
+
+
 <!-- Content Wrapper START -->
 <div class="main-content">
    <div class="container-fluid">
@@ -20,7 +23,7 @@
   <div class="col-md-6">
                      <div class="form-group">
                          <label class="control-label"><b>Titulo</b></label>
-                         <input type="text" class="form-control">
+                         <input type="text" id=titulo" class="form-control">
                      </div>
                  </div>
     <div class="dropdown col-md-6">

@@ -23,6 +23,7 @@
     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 
 <body>
@@ -190,7 +191,7 @@
                                         </div>
                                     </a>
                                 </li>
-                            </ul>    
+                            </ul>
                         </li>
                         <li class="notifications dropdown dropdown-animated scale-left">
                             <span class="counter">2</span>
@@ -330,4 +331,3 @@
                 </div>
             </div>
             <!-- Header END -->
-            

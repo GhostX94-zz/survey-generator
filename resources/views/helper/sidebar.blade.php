@@ -21,6 +21,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @if(Auth::user()->tipoUsuario=='admin')
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
@@ -40,6 +41,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         </ul>
                 </div>
             </div>

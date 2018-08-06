@@ -10,3 +10,6 @@ cerradas = radio buttons
 
 ___________________________________________________________________________
 TEST
+php artisan db:seed --class=UsuarioSeeder
+php artisan db:seed --class=preguntasSeeder
+php artisan db:seed --class=TipoEncuestasSeed

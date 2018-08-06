@@ -27,6 +27,7 @@ Route::get('/verUsuario','Usuarios\UsuariosController@verUsuarios')->name('verUs
 
 Route::get('/getPreguntaByTipo/{tipo}', 'Encuesta\EncuestaController@getPreguntasByEncuestas')->name('getPreguntaByTipo');
 
+Route::post('ajaxRequest', 'Encuesta\Encuesta@ajaxRequestPost');
 
 
 Auth::routes();

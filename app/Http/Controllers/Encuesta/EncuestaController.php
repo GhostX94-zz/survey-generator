@@ -26,4 +26,10 @@ class EncuestaController extends Controller
         return $pregutnas;
     }
 
+    public function ajaxRequestPost()
+    {
+        $input = request()->all();
+        return response()->json(['success' => 'Got Simple Ajax Request.']);
+    }
+
 }
