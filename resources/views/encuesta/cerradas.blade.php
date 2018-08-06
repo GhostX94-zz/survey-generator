@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-6" id=cerradas>
      <div class="p-h-10">
          <form class="m-t-15">
              <div class="form-row">

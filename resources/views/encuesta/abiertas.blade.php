@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-6" id=abiertas>
      <div class="p-h-10">
          <form class="m-t-15">
              <div class="form-row">
@@ -96,4 +96,4 @@
              <input type="button" id="generar" value="Generar PDF" onclick="alert('PDF en proceso....')" class="bt btn btn-success" />
          </form>
      </div>
- </div
+    </div>

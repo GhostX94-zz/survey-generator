@@ -7,14 +7,29 @@ function getEncuestaById(id) {
 }
 
 $(document).ready(function () {
+
+
+    $("#abiertas").hide();
+    $("#cerradas").hide();
+    $("#mixtas").hide();
+
     $('#Cerradas').on('click', function (e) {
         estado = "Cerradas";
+        $("#cerradas").show();
+        $("#abiertas").hide();
+        $("#mixtas").hide();
     });
     $('#Abiertas').on('click', function (e) {
         estado = "Abiertas";
+        $("#abiertas").show();
+        $("#cerradas").hide();
+        $("#mixtas").hide();
     });
     $('#Mixtas').on('click', function (e) {
         estado = "Mixtas";
+        $("#mixtas").show();
+        $("#cerradas").hide();
+        $("#abiertas").hide();
     });
 });
 var count = 0;

@@ -1,5 +1,5 @@
-<div class="col-md-6">
-     <div class="p-h-10">
+<div class="col-md-6" >
+     <div class="p-h-10" id="mixtas">
          <form class="m-t-15">
              <div class="form-row">
 
@@ -131,8 +131,6 @@
              <input type="text" class="form-control">
             </div>
         </div>
-
-
 
              </div>
 
