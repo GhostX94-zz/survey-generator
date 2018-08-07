@@ -31,7 +31,11 @@
           <th scope="row">{{$item->id}}</th>
           <td>{{$item->name}}</td>
           <td>{{$item->email}}</td>
-          <td><input type="button"  value="Editar" class="btn btn-warning" /></td>
+          <td>
+              <form action="ActualizarSaldoInicial/{{$ans->idSucursalSaldo}}">
+              <input type="button"  value="Editar" class="btn btn-warning" />
+              </form>
+            </td>
           <td><input type="button"  value="Eliminar" class="btn btn-danger" /></td>
        </tr>
         @endforeach

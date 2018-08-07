@@ -23,6 +23,13 @@ class UsuariosController extends Controller
 
         $usuarios = DB::table('users')->get();
         return view('usuarios.verUsuario',compact('usuarios'));
-        
+
+    }
+
+    public function update($id){
+        $usuarios = DB::table('users')->get();
+        $user = \App\User::find($id);
+
+        return view('usuarios.actualizarUsuario', compact('usuarios', 'user'));
     }
 }
