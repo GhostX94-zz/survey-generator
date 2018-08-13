@@ -39,3 +39,12 @@ Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 
+Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
+/*Route::get('getEncuestaByid/{titulo}',function($titulo){
+    $title =  trim($titulo);
+    $preguntas = DB::table('preguntas')
+    ->where('titulo','=',$title)
+    ->get();
+    return $preguntas;
+});
+*/
