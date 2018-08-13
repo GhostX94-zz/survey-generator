@@ -56,6 +56,8 @@
                                         
                                     </form>
                                     <a href="register" class="m-b-15 font-size-13" align="center">Registrarse</a>
+                                    </br>
+                                    <a href="verEncuestas" class="m-b-15 font-size-13" align="center">Ver Encuestas</a>
                                 </div>
                             </div>
                         </div>

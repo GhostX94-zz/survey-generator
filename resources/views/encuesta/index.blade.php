@@ -20,12 +20,7 @@
 <div class="card-header border bottom">
  <h4 class="card-title">Crear encuesta</h4>
 </br>
-  <div class="col-md-6">
-                     <div class="form-group">
-                         <label class="control-label"><b>Titulo</b></label>
-                         <input type="text" id="titulo" class="form-control">
-                     </div>
-                 </div>
+
     <div class="dropdown col-md-6">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         Seleccionar...

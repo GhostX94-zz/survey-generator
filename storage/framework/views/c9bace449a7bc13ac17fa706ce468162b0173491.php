@@ -31,7 +31,11 @@
           <th scope="row"><?php echo e($item->id); ?></th>
           <td><?php echo e($item->name); ?></td>
           <td><?php echo e($item->email); ?></td>
-          <td><input type="button"  value="Editar" class="btn btn-warning" /></td>
+          <td>
+              <form action="ActualizarSaldoInicial/<?php echo e($ans->idSucursalSaldo); ?>">
+              <input type="button"  value="Editar" class="btn btn-warning" />
+              </form>
+            </td>
           <td><input type="button"  value="Eliminar" class="btn btn-danger" /></td>
        </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
