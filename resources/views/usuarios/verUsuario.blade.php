@@ -32,11 +32,15 @@
           <td>{{$item->name}}</td>
           <td>{{$item->email}}</td>
           <td>
-              <form action="ActualizarSaldoInicial/{{$ans->idSucursalSaldo}}">
-              <input type="button"  value="Editar" class="btn btn-warning" />
+              <form action="edit/{{$item->id}}">
+              <input type="submit"  value="Editar" class="btn btn-warning" />
               </form>
             </td>
-          <td><input type="button"  value="Eliminar" class="btn btn-danger" /></td>
+          <td>
+          <form action="delete/{{$item->id}}">
+          <input type="submit"  value="Eliminar" class="btn btn-danger" />
+          </form>
+          </td>
        </tr>
         @endforeach
       </tbody>

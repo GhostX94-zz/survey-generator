@@ -32,11 +32,15 @@
           <td><?php echo e($item->name); ?></td>
           <td><?php echo e($item->email); ?></td>
           <td>
-              <form action="ActualizarSaldoInicial/<?php echo e($ans->idSucursalSaldo); ?>">
-              <input type="button"  value="Editar" class="btn btn-warning" />
+              <form action="edit/<?php echo e($item->id); ?>">
+              <input type="submit"  value="Editar" class="btn btn-warning" />
               </form>
             </td>
-          <td><input type="button"  value="Eliminar" class="btn btn-danger" /></td>
+          <td>
+          <form action="delete/<?php echo e($item->id); ?>">
+          <input type="submit"  value="Eliminar" class="btn btn-danger" />
+          </form>
+          </td>
        </tr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </tbody>

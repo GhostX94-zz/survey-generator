@@ -24,20 +24,25 @@ Route::get('/logout',function(){
 
 Route::get('/getUsuario','Usuarios\UsuariosController@index')->name('getUsuario');
 Route::get('/verUsuario','Usuarios\UsuariosController@verUsuarios')->name('verUsuario');
+Route::get('/delete/{idUsuario}','Usuarios\UsuariosController@delete');
+Route::get('/edit/{idUsuario}','Usuarios\UsuariosController@edit');
+Route::post('actualizar', 'Usuarios\UsuariosController@update')->name('actualizar.update');
 
 Route::get('/verEncuestas','Encuesta\ExternoController@getEncuestas')->name('verEncuestas');
 
 Route::get('/getPreguntaByTipo/{tipo}', 'Encuesta\EncuestaController@getPreguntasByEncuestas')->name('getPreguntaByTipo');
 
 Route::post('ajaxRequest', 'Encuesta\Encuesta@ajaxRequestPost');
-Route::get('ActualizarUsuario/{id}', ['uses' => 'Usuarios\UsuariosController@update', 'as' => 'ActualizarUsuario']);
 
 Route::post('encuesta', 'Encuesta\EncuestaController@store')->name('encuesta.store');
+
+
 
 
 Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
+
 
 Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
 /*Route::get('getEncuestaByid/{titulo}',function($titulo){
