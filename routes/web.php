@@ -29,6 +29,7 @@ Route::get('/edit/{idUsuario}','Usuarios\UsuariosController@edit');
 Route::post('actualizar', 'Usuarios\UsuariosController@update')->name('actualizar.update');
 
 Route::get('/verEncuestas','Encuesta\ExternoController@getEncuestas')->name('verEncuestas');
+Route::post('respuesta', 'Encuesta\ExternoController@store')->name('respuesta.store');
 
 Route::get('/getPreguntaByTipo/{tipo}', 'Encuesta\EncuestaController@getPreguntasByEncuestas')->name('getPreguntaByTipo');
 
@@ -39,12 +40,14 @@ Route::post('encuesta', 'Encuesta\EncuestaController@store')->name('encuesta.sto
 
 
 
+
 Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 
 
-Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
+//Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
+Route::post('setEncuesta', 'Encuesta\ExternoController@getEncuestaByid')->name('setEncuesta.store');
 /*Route::get('getEncuestaByid/{titulo}',function($titulo){
     $title =  trim($titulo);
     $preguntas = DB::table('preguntas')

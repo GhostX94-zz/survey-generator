@@ -2,11 +2,6 @@
   <div class="side-nav expand-lg">
                 <div class="side-nav-inner">
                     <ul class="side-nav-menu scrollable">
-                        
-                        
-                        
-                        
-                       
                         </ul>
                 </div>
             </div>
@@ -133,7 +128,7 @@
                                             <li class="list-item unread-msg">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../../assets/images/avatars/thumb-1.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-1.jpg" alt="">
                                                         <span class="status success"></span>
                                                     </div>
                                                     <div class="info">
@@ -148,7 +143,7 @@
                                             <li class="list-item unread-msg">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../../assets/images/avatars/thumb-2.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-2.jpg" alt="">
                                                         <span class="status success"></span>
                                                     </div>
                                                     <div class="info">
@@ -163,7 +158,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-3.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-3.jpg" alt="">
                                                         <span class="status success"></span>
                                                     </div>
                                                     <div class="info">
@@ -180,7 +175,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-4.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-4.jpg" alt="">
                                                         <span class="status away"></span>
                                                     </div>
                                                     <div class="info">
@@ -191,7 +186,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-5.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-5.jpg" alt="">
                                                         <span class="status away"></span>
                                                     </div>
                                                     <div class="info">
@@ -202,7 +197,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-6.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-6.jpg" alt="">
                                                         <span class="status away"></span>
                                                     </div>
                                                     <div class="info">
@@ -213,7 +208,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-7.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-7.jpg" alt="">
                                                         <span class="status away"></span>
                                                     </div>
                                                     <div class="info">
@@ -229,7 +224,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-8.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-8.jpg" alt="">
                                                         <span class="status busy"></span>
                                                     </div>
                                                     <div class="info">
@@ -240,7 +235,7 @@
                                             <li class="list-item">
                                                 <a href="javascript:void(0);" class="conversation-toggler media-hover p-h-20">
                                                     <div class="media-img">
-                                                        <img src="../assets/images/avatars/thumb-9.jpg" alt="">
+                                                        <img src="assets/images/avatars/thumb-9.jpg" alt="">
                                                         <span class="status busy"></span>
                                                     </div>
                                                     <div class="info">
@@ -274,7 +269,7 @@
                                             </div>
                                             <div class="msg msg-recipient">
                                                 <div class="user-img">
-                                                    <img src="../assets/images/avatars/thumb-2.jpg" alt="">
+                                                    <img src="assets/images/avatars/thumb-2.jpg" alt="">
                                                 </div>
                                                 <div class="bubble">
                                                     <div class="bubble-wrapper">
@@ -291,7 +286,7 @@
                                             </div>
                                             <div class="msg msg-recipient">
                                                 <div class="user-img">
-                                                    <img src="../assets/images/avatars/thumb-2.jpg" alt="">
+                                                    <img src="assets/images/avatars/thumb-2.jpg" alt="">
                                                 </div>
                                                 <div class="bubble">
                                                     <div class="bubble-wrapper">
@@ -308,7 +303,7 @@
                                             </div>
                                             <div class="msg msg-recipient">
                                                 <div class="user-img">
-                                                    <img src="../assets/images/avatars/thumb-2.jpg" alt="">
+                                                    <img src="assets/images/avatars/thumb-2.jpg" alt="">
                                                 </div>
                                                 <div class="bubble">
                                                     <div class="bubble-wrapper">
@@ -321,7 +316,7 @@
                                             </div>
                                             <div class="msg msg-recipient">
                                                 <div class="user-img">
-                                                    <img src="../assets/images/avatars/thumb-2.jpg" alt="">
+                                                    <img src="assets/images/avatars/thumb-2.jpg" alt="">
                                                 </div>
                                                 <div class="bubble">
                                                     <div class="bubble-wrapper">

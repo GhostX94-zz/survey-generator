@@ -20,8 +20,10 @@
 <div class="row">
  <div class="col-sm-12" id="main">
 
-{!!Form::open(['route'=>'encuesta.store','method'=>'POST','class'=>'"m-t-15'])!!}
-     <input type="hidden"  class="form-control" id="tipoEncuesta" name="tipoEncuesta" value="Abiertas">
+{!!Form::open(['route'=>'respuesta.store','method'=>'POST','class'=>'"m-t-15'])!!}
+     <input type="hidden"  class="form-control" id="tipoEncuesta" name="tipoEncuesta" value="{{$tipoEncuesta}}">
+     <input type="hidden"  class="form-control" id="titulo" name="titulo" value="{{$titulo}}">
+     <input type="hidden"  class="form-control" id="genero" name="genero" value="{{$genero}}">
 
                  @foreach($preguntas as $indice => $pregunta)
 
@@ -29,8 +31,9 @@
              <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$pregunta->nombre}}</label>
+                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
                          <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="abierta[]">
+                <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                      </div>
                  </div>
                  @endif
@@ -39,8 +42,14 @@
                  <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$pregunta->nombre}}</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" >
+                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <br/>
+                         <label class="control-label">Si</label>
+                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" value="Si">
+                         <br/>
+                         <label class="control-label">No</label>
+                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" value="No">
+                         <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                      </div>
                  </div>
                  </div>
@@ -50,9 +59,15 @@
                   @if($indice <= 7 )
                  <div class="form-row">
                  <div class="col-md-12">
-                     <div class="form-group">
-                         <label class="control-label">{{$pregunta->nombre}}</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" >
+                 <div class="form-group">
+                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <br/>
+                         <label class="control-label">Si</label>
+                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="checkbox" value="Si">
+                         <br/>
+                         <label class="control-label">No</label>
+                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="checkbox" value="No">
+                         
                      </div>
                  </div>
                  </div>
@@ -60,16 +75,16 @@
                 <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$pregunta->nombre}}</label>
-                         <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="abierta[]">
+                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="mixta[]">
                      </div>
                  </div>
-                  @endif
-
+                  @endif    
+                  <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                  @endif
 
              @endforeach
-             <input type="submit" id="generar" value="Generar" onclick="" class="bt btn btn-success" />
+             <input type="submit" id="enviar" value="Enviar" onclick="" class="bt btn btn-success" />
              {!!Form::close()!!}
   </div>
     </div>
