@@ -1,9 +1,14 @@
 @include('respuestas.header')
-@include('respuestas.sidebar')
 
+<style>
+body{
+    color: black;
+}
+
+</style>
 
 <!-- Content Wrapper START -->
-<div class="main-content">
+<div class="container">
    <div class="container-fluid">
      <div class="page-header">
      <h2 class="header-title">{{$titulo}}</h2>
@@ -12,8 +17,8 @@
 </nav>
  </div>
  </div>
- <div class="card">
-<div class="card-header border bottom">
+ <div class="card" style="background-color:darkseagreen; border-radius: 73px;">
+<div class="card-header border bottom" style="">
  <h4 class="card-title"></h4>
 
 <div class="card-body">
@@ -31,7 +36,7 @@
              <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="abierta[]">
                 <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                      </div>
@@ -42,13 +47,17 @@
                  <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <br/>
-                         <label class="control-label">Si</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" value="Si">
+                         <div class="col-md-12">
+                         <label class="control-label" >Si</label>
+                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="radio" value="Si">
+                         <label class="control-label" >No</label>
+                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="radio" value="No">
+                         </div>
                          <br/>
-                         <label class="control-label">No</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="checkbox" value="No">
+                         <div class="col-md-12">
+                         </div>
                          <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                      </div>
                  </div>
@@ -60,14 +69,17 @@
                  <div class="form-row">
                  <div class="col-md-12">
                  <div class="form-group">
-                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <br/>
+                         <div class="col-md-12">
                          <label class="control-label">Si</label>
-                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="checkbox" value="Si">
-                         <br/>
+                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="radio" value="Si">
                          <label class="control-label">No</label>
-                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="checkbox" value="No">
-                         
+                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="radio" value="No">
+                         </div>
+                         <br/>
+                         <div class="col-md-12">
+                         </div>
                      </div>
                  </div>
                  </div>
@@ -75,7 +87,7 @@
                 <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label">{{$indice}} {{$pregunta->nombre}}</label>
+                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="mixta[]">
                      </div>
                  </div>
@@ -84,7 +96,7 @@
                  @endif
 
              @endforeach
-             <input type="submit" id="enviar" value="Enviar" onclick="" class="bt btn btn-success" />
+             <input type="submit" id="enviar" value="Enviar" onclick="" class="btn btn-dark" />
              {!!Form::close()!!}
   </div>
     </div>

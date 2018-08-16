@@ -81,6 +81,7 @@ class ExternoController extends Controller
         
         $genero = array("Hombre","Mujer");
         
+        
         return view('encuesta.verEncuestas',compact('encuestas','genero'));
     }
 
@@ -107,6 +108,7 @@ class ExternoController extends Controller
         ->where('titulo','=',$title)
         ->count();
 
+        
         return view('respuestas.respuestas',compact('preguntas','titulo','totalPreguntas','genero','tipoEncuesta'));
     }
 }

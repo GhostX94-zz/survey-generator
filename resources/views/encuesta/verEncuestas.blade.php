@@ -1,9 +1,10 @@
 @include('helper.header_')
-@include('helper.sidebar_')
+
+
 <!-- Content Wrapper START -->
 <div class="main-content">
    <div class="container-fluid">
-     <div class="page-header">
+     <div class="page-hea der">
 <h2 class="header-title">Ver Encuestas</h2>
 <div class="header-sub-title">
 <nav class="breadcrumb breadcrumb-dash">
