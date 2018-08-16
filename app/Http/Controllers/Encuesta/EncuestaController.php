@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 use DB;
 use Illuminate\Support\Facades\Input;
+use ConsoleTVs\Charts\Classes\Chartjs\Chart;
+
+
 
 class EncuestaController extends Controller
 {
@@ -121,6 +124,24 @@ class EncuestaController extends Controller
         
     }
 
+
+    public function getGrafica(){
+
+        $data = DB::table('preguntas')
+        ->where('tipoPregunta','=','Cerradas')
+        ->select('titulo','tipoPregunta','idPregunta')
+        ->orderBy('titulo', 'asc')
+        ->groupBy('titulo','tipoPregunta','idPregunta')
+        ->get();
+        
+        $chart =  \Charts::create('pie', 'highcharts')    
+        ->title("Resumen de Presupuestos Realizados")
+        ->labels(['Preguntas Cerradas'])
+        ->values([78,10,20])
+        ->dimensions(1000,500)
+        ->responsive(false);
+    return view('encuesta.grafica', ['chart' => $chart, "datas" => $data]);
+    }
     public function ajaxRequestPost()
     {
         $input = request()->all();

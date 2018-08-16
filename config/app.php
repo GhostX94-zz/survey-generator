@@ -161,6 +161,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
+
 
     ],
 
@@ -214,6 +216,8 @@ return [
         'Html' => 'Collective\Html\HtmlFacade',
         'PDF' => 'Vsmoraes\Pdf\PdfFacade',
         'Input' => Illuminate\Support\Facades\Input::class,
+        
+
 
     ],
 

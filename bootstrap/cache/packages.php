@@ -10,11 +10,25 @@
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
     ),
   ),
+  'consoletvs/charts' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 
     array (
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
+    ),
+  ),
+  'fx3costa/laravelchartjs' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Fx3costa\\LaravelChartJs\\Providers\\ChartjsServiceProvider',
     ),
   ),
   'laravel/tinker' => 

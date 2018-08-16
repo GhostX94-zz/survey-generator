@@ -45,6 +45,7 @@ Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
 Route::get('/pdf/{titulo}','Usuarios\UsuariosController@generarPdf')->name('pdf');
+Route::get('grafico', 'Encuesta\EncuestaController@getGrafica');
 
 //Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
 Route::post('setEncuesta', 'Encuesta\ExternoController@getEncuestaByid')->name('setEncuesta.store');

@@ -36,7 +36,7 @@
                                 <tr>
                                     <td><strong>{{$encuesta->idPregunta}}</strong></td>
                                     <td>{{$encuesta->titulo}}</td>
-                                    <td><a href="pdf/¿TE GUSTA LA COMIDA?">Descargar PDF</a></td>
+                                    <td><a href="pdf/{{$encuesta->titulo}}">Descargar PDF</a></td>
                                 @endforeach
                             </tbody>
                         </table>
