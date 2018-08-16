@@ -24,7 +24,7 @@ body{
 <div class="card-body">
 <div class="row">
  <div class="col-sm-12" id="main">
-
+ <h2 class="header-title"><b>{{$titulo}}</b></h2>
 {!!Form::open(['route'=>'respuesta.store','method'=>'POST','class'=>'"m-t-15'])!!}
      <input type="hidden"  class="form-control" id="tipoEncuesta" name="tipoEncuesta" value="{{$tipoEncuesta}}">
      <input type="hidden"  class="form-control" id="titulo" name="titulo" value="{{$titulo}}">
@@ -36,7 +36,7 @@ body{
              <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
+                     <label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$indice+1}}.- {{$pregunta->nombre}}</label>
                          <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="abierta[]">
                 <input type="hidden"  class="form-control" id="{{$pregunta->idPregunta}}" name="idPregunta[]" value="{{$pregunta->idPregunta}}">
                      </div>
@@ -47,7 +47,7 @@ body{
                  <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
+                     <label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$indice+1}}.- {{$pregunta->nombre}}</label>
                          <br/>
                          <div class="col-md-12">
                          <fieldset id="cerrada-{{$pregunta->idPregunta}}">
@@ -55,6 +55,7 @@ body{
                          <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="Si">
                          <label class="control-label" >No</label>
                          <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="No">
+                         
                          </fieldset>
                          </div>
                          <br/>
@@ -71,7 +72,7 @@ body{
                  <div class="form-row">
                  <div class="col-md-12">
                  <div class="form-group">
-                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
+                 <label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$indice+1}}.- {{$pregunta->nombre}}</label>
                          <br/>
                          <div class="col-md-12">
                          <fieldset id="mixta-{{$pregunta->idPregunta}}">
@@ -91,7 +92,7 @@ body{
                 <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
-                         <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
+                     {{$indice+1}}.-<label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$pregunta->nombre}}</label>
                          <input type="text" class="form-control" id="{{$pregunta->idPregunta}}" name="mixta[]">
                      </div>
                  </div>
@@ -101,6 +102,7 @@ body{
 
              @endforeach
              <input type="submit" id="enviar" value="Enviar" onclick="alert('Gracias por contestar la encuesta');" class="btn btn-dark" />
+             
              {!!Form::close()!!}
   </div>
     </div>

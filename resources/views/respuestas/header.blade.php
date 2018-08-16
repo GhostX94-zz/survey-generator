@@ -23,6 +23,7 @@
     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
+    <link href="assets/css/barra.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 
@@ -37,7 +38,8 @@
     color: rgba(255, 255, 255, 1);">
                     <div class="nav-logo">
                         <a href="home">
-                            
+                        <div class="logo logo-dark" style="background-image: url('assets/images/logo/logo.png')"></div>
+                        <div class="logo logo-white" style="background-image: url('assets/images/logo/logo-white.png')"></div>
                         </a>
                     </div>
 

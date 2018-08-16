@@ -23,6 +23,7 @@
     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="assets/css/animate.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
+    <link href="assets/css/barra.css" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 

@@ -35,6 +35,8 @@ class EncuestaController extends Controller
         $preguntasMixtas = $request->input("mixta");
         $titulo = $request->input('titulo');
         $tipoEcuesta = $request->input("tipoEncuesta");
+
+        
         
         switch($tipoEcuesta){
             case "Abiertas":
