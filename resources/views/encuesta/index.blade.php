@@ -1,6 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script src="js/servicios.js"></script>
+<script src="js/generador.js"></script>
 
 
 
@@ -19,7 +20,7 @@
  <div class="card">
 <div class="card-header border bottom">
  <h4 class="card-title">Crear encuesta</h4>
-</br>
+<br/>
 
     <div class="dropdown col-md-6">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

@@ -36,7 +36,7 @@ class EncuestaController extends Controller
         $titulo = $request->input('titulo');
         $tipoEcuesta = $request->input("tipoEncuesta");
 
-        
+        return $preguntasCerradas;
         
         switch($tipoEcuesta){
             case "Abiertas":
@@ -77,7 +77,18 @@ class EncuestaController extends Controller
         }
     }
 
-   
+    public function getEncuestasCerradas(){
+
+        $encuestas = DB::table('preguntas')
+        ->where('tipoPregunta','=','Cerradas')
+        ->select('titulo','tipoPregunta')
+        ->orderBy('titulo', 'asc')
+        ->groupBy('titulo','tipoPregunta')
+        ->get();
+        
+        
+        
+    }
 
     public function ajaxRequestPost()
     {
