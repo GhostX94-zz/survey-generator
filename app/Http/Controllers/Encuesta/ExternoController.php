@@ -19,7 +19,7 @@ class ExternoController extends Controller
         $tipoEncuesta = $request->input("tipoEncuesta");
 
         
-
+        
         switch($tipoEncuesta){
             case "Abiertas":
                 
@@ -33,7 +33,7 @@ class ExternoController extends Controller
                 'tipoPregunta' => $tipoEncuesta
             ]);
             }
-            return redirect('verEncuestas');
+            return redirect('login');
             break;
             case "Cerradas":
             
@@ -47,7 +47,7 @@ class ExternoController extends Controller
                     'tipoPregunta' => $tipoEncuesta
                 ]);
                }
-               return redirect('verEncuestas');
+               return redirect('login');
             break;
             case "Mixtas":
             $limite = 15;
@@ -60,7 +60,7 @@ class ExternoController extends Controller
                 'tipoPregunta' => $tipoEncuesta
             ]);
             }
-            return redirect('verEncuestas');
+            return redirect('login');
             break;
         }
 

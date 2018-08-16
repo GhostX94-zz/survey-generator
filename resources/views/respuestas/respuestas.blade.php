@@ -50,10 +50,12 @@ body{
                          <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <br/>
                          <div class="col-md-12">
+                         <fieldset id="cerrada-{{$pregunta->idPregunta}}">
                          <label class="control-label" >Si</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="radio" value="Si">
+                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="Si">
                          <label class="control-label" >No</label>
-                         <input id="{{$pregunta->idPregunta}}" name="cerrada[]" type="radio" value="No">
+                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="No">
+                         </fieldset>
                          </div>
                          <br/>
                          <div class="col-md-12">
@@ -72,10 +74,12 @@ body{
                          <label class="control-label" style="border-radius: 15px 50px;     background: #ffff;     padding: 20px;  width: 250px; height: 15px; ">{{$indice+1}} {{$pregunta->nombre}}.-</label>
                          <br/>
                          <div class="col-md-12">
-                         <label class="control-label">Si</label>
-                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="radio" value="Si">
-                         <label class="control-label">No</label>
-                         <input id="{{$pregunta->idPregunta}}" name="mixta[]" type="radio" value="No">
+                         <fieldset id="mixta-{{$pregunta->idPregunta}}">
+                         <label class="control-label" >Si</label>
+                         <input  name="mixta[]-{{$pregunta->idPregunta}}" type="radio" value="Si">
+                         <label class="control-label" >No</label>
+                         <input  name="mixta[]-{{$pregunta->idPregunta}}" type="radio" value="No">
+                         </fieldset>
                          </div>
                          <br/>
                          <div class="col-md-12">
@@ -96,7 +100,7 @@ body{
                  @endif
 
              @endforeach
-             <input type="submit" id="enviar" value="Enviar" onclick="" class="btn btn-dark" />
+             <input type="submit" id="enviar" value="Enviar" onclick="alert('Gracias por contestar la encuesta');" class="btn btn-dark" />
              {!!Form::close()!!}
   </div>
     </div>
