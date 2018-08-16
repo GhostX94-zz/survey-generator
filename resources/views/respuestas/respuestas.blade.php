@@ -49,12 +49,14 @@ body{
                      <div class="form-group">
                      <label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$indice+1}}.- {{$pregunta->nombre}}</label>
                          <br/>
+                         @if($pregunta->idPregunta == $pregunta->preguntaID)
                          <div class="col-md-12">
                          <fieldset id="cerrada-{{$pregunta->idPregunta}}">
                          <label class="control-label" >{{$pregunta->opcion}}</label>
                          <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="{{$pregunta->opcion}}">
                          </fieldset>
                          </div>
+                         @endif
                          <br/>
                          <div class="col-md-12">
                          </div>

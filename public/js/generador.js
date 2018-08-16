@@ -16,14 +16,19 @@ $(document).ready(function () {
     for (i = 0; i < num; i++) { 
         $("#radios").append('<br/><input type="text" class="form-control" id="'+id+'" name="radios[]"><br/>');
         console.log(num);
-    }
         }
+        //if($('input#p'+id+'[name="cerrada[]"]').val().length > 0){
+
+        var value = $('input#p'+id+'[name="cerrada[]"]').val();
+        $('input#p'+id+'[name="cerrada[]"]').val(num+"-"+value);
+        //}
+    }
     });
 
     $("#guardar").on('click',function(){
         $('input[name="radios[]"]').each(function() {
 
-    $("#arreglo").append('<br/><input type="hidden" class="form-control" id="'+this.id+'" name="radios2[]" value="'+(parseInt(this.id)-1)+'-'+$(this).val()+'"><br/>');
+    $("#arreglo").append('<br/><input type="hidden" class="form-control" id="p'+this.id+'" name="radios2[]" value="p'+this.id+'-'+$(this).val()+'"><br/>');
             
             //alert($(this).val());
         });

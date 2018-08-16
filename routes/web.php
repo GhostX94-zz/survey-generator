@@ -39,6 +39,11 @@ Route::post('encuesta', 'Encuesta\EncuestaController@store')->name('encuesta.sto
 Route::get('/verRespuestas','Encuesta\EncuestaController@getEncuestasCerradas')->name('verRespuestas');
 
 
+Route::get('/deleteEncuesta/{titulo}','Encuesta\EncuestaController@delete');
+Route::get('/editEncuesta/{titulo}','Encuesta\EncuestaController@edit');
+Route::post('actualizare', 'Encuesta\EncuestaController@update')->name('actualizare.update');
+Route::get('/verPreguntas','Encuesta\EncuestaController@verPreguntas')->name('verPreguntas');
+
 
 
 Auth::routes();

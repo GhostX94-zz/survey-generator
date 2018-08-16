@@ -26,6 +26,11 @@
                                     <a href="">Generar PDF</a>
                                 </li>
                             </ul>
+                            <ul class="dropdown-menu">
+                                <li class="active">
+                                    <a href="verPreguntas">Ver Preguntas</a>
+                                </li>
+                            </ul>
                             <?php endif; ?>
                         </li>
                         <?php if(Auth::user()->tipoUsuario=='admin'): ?>

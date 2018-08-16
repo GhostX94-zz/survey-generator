@@ -18,7 +18,7 @@
                <label class="control-label">Pregunta 1</label>
              </div>
              <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
-             <!--<input type="button" id="p1" value="+"  class="btn btn-dark" data-toggle="modal" onclick="Crear(this);" />-->
+             
              <input type="text" class="form-control" id="p1" name="cerrada[]">
              
             </div>

@@ -1,14 +1,10 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
+<!DOCTYPE html>
+<html>
+ <body>
 
-                <div class="panel-body">
-                <div style="width:75%;">
-                {!! $chartjs->render() !!}
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  <div>{!! $chart->container() !!}</div>
+
+ <script src="path/to/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+ {!! $chart->script() !!}
+ </body>
+</html>

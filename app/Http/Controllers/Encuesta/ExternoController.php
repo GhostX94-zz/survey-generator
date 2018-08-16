@@ -96,12 +96,14 @@ class ExternoController extends Controller
         ->get();
         
         $title =  trim($titulo);
+        $count = $preguntas = DB::table('preguntas as p')->count();
         $preguntas = DB::table('preguntas as p')
+        ->select('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta','o.id','o.opcion','o.idPregunta as preguntaID')
         ->join('opciones as o','p.idPregunta','=','o.idPregunta')
-        ->where('titulo','=',$title)
+        ->where('p.titulo','=',$title)
+        ->orderBy('o.opcion', 'asc')
+        ->groupBy('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta','o.id','o.opcion','preguntaID')
         ->get();
-
-        
 
         $tipoEncuesta = DB::table('preguntas')
         ->select('tipoPregunta')
@@ -112,7 +114,7 @@ class ExternoController extends Controller
         $totalPreguntas = DB::table('preguntas')
         ->where('titulo','=',$title)
         ->count();
-
+        
         
         return view('respuestas.respuestas',compact('preguntas','titulo','totalPreguntas','genero','tipoEncuesta'));
     }

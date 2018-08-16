@@ -62,39 +62,126 @@ class EncuestaController extends Controller
             $limite = 15;
             
             for($var= 0; $var < $limite;$var++){
-                $id= DB::table('preguntas')->insertGetId([
+               $id= DB::table('preguntas')->insertGetId([
                    'nombre' => $preguntasCerradas[$var],
                    'titulo' =>  $titulo,
                    'tipoPregunta' => 'Cerradas'
                ]);
-
-                $myArray = explode('-', $arreglo[$var]);
-                //if($var == $myArray[$var]){
+                $numeroInputs = explode('-', $preguntasCerradas[$var])[0];
+               for($i= 0; $i < $numeroInputs;$i++){
+                   $tipoId = explode('-', $arreglo[$i])[0];
+                   $valor = explode('-', $arreglo[$i])[1];
+                   if($tipoId == "p1"){
                     DB::table('opciones')->insert([
-                        'opcion' => $myArray[1],
+                        'opcion' => $valor,
                         'idPregunta' =>  $id
                     ]);
-                //}
+                    }
 
-               }
-            
-            //$myArray = explode('-', $arreglo[$i]);
-              /*$id= DB::table('preguntas')->insertGetId([
-                   'nombre' => $preguntasCerradas[$var],
-                   'titulo' =>  $titulo,
-                   'tipoPregunta' => 'Cerradas'
-               ]);
-               }
+                    if($tipoId == "p1"){
+                        DB::table('opciones')->insert([
+                            'opcion' => $valor,
+                            'idPregunta' =>  $id
+                        ]);
+                        }
 
-               for($i= 0; $i < $valorEntradas;$i++){
-                DB::table('opciones')->insert([
-                    'opcion' => $arreglo[$i],
-                    'idPregunta' =>  $id
-                ]);*/
+                        if($tipoId == "p2"){
+                            DB::table('opciones')->insert([
+                                'opcion' => $valor,
+                               'idPregunta' =>  $id
+                           ]);
+                           }                        
+                           if($tipoId == "p3"){
+                               DB::table('opciones')->insert([
+                                   'opcion' => $valor,
+                                   'idPregunta' =>  $id
+                               ]);
+                               }                        
+                               if($tipoId == "p4"){
+                                   DB::table('opciones')->insert([
+                                       'opcion' => $valor,
+                                       'idPregunta' =>  $id
+                                   ]);
+                                   }                        
+                                   if($tipoId == "p5"){
+                                       DB::table('opciones')->insert([
+                                           'opcion' => $valor,
+                                           'idPregunta' =>  $id
+                                       ]);
+                                       }
 
-                //}
-                
-               
+                                        if($tipoId == "p6"){
+                            DB::table('opciones')->insert([
+                                'opcion' => $valor,
+                                'idPregunta' =>  $id
+                            ]);
+                            }
+
+                            if($tipoId == "p7"){
+                                DB::table('opciones')->insert([
+                                    'opcion' => $valor,
+                                    'idPregunta' =>  $id
+                                ]);
+                                }
+
+                                if($tipoId == "p8"){
+                                    DB::table('opciones')->insert([
+                                        'opcion' => $valor,
+                                        'idPregunta' =>  $id
+                                    ]);
+                                    }
+
+                                    if($tipoId == "p9"){
+                                        DB::table('opciones')->insert([
+                                            'opcion' => $valor,
+                                            'idPregunta' =>  $id
+                                        ]);
+                                        }
+
+                                   if($tipoId == "p10"){
+                                       DB::table('opciones')->insert([
+                                           'opcion' => $valor,
+                                           'idPregunta' =>  $id
+                                       ]);
+                                       }
+
+                                       if($tipoId == "p11"){
+                                           DB::table('opciones')->insert([
+                                               'opcion' => $valor,
+                                               'idPregunta' =>  $id
+                                           ]);
+                                           }
+
+                                           if($tipoId == "p12"){
+                                               DB::table('opciones')->insert([
+                                                   'opcion' => $valor,
+                                                   'idPregunta' =>  $id
+                                               ]);
+                                               }
+
+                                               if($tipoId == "p13"){
+                                                   DB::table('opciones')->insert([
+                                                       'opcion' => $valor,
+                                                       'idPregunta' =>  $id
+                                                   ]);
+                                                   }
+
+                                                   if($tipoId == "p14"){
+                                                       DB::table('opciones')->insert([
+                                                           'opcion' => $valor,
+                                                           'idPregunta' =>  $id
+                                                       ]);
+                                                       }
+                                                       if($tipoId == "p15"){
+                                                        DB::table('opciones')->insert([
+                                                            'opcion' => $valor,
+                                                            'idPregunta' =>  $id
+                                                        ]);
+                                                        }
+                                      }
+
+                                     }
+
             return view('_Layout',compact('tipoEncuestas'));
             break;
             case "Mixtas":
@@ -140,6 +227,11 @@ class EncuestaController extends Controller
         ->values([78,10,20])
         ->dimensions(1000,500)
         ->responsive(false);
+
+
+
+
+        
     return view('encuesta.grafica', ['chart' => $chart, "datas" => $data]);
     }
     public function ajaxRequestPost()
@@ -148,4 +240,62 @@ class EncuestaController extends Controller
         return response()->json(['success' => 'Got Simple Ajax Request.']);
     }
 
+    public function verPreguntas(){
+        $encuestas = DB::table('preguntas')
+        ->where('tipoPregunta','=','Cerradas')
+        ->select('titulo')
+        ->orderBy('titulo', 'asc')
+        ->groupBy('titulo')
+        ->get();
+        
+        return view('encuesta.verPreguntas',compact('encuestas'));
+    }
+
+
+    /*EDITAR ENCUESTA*/
+    public function update(Request $request){
+
+        return redirect('home');
+        $tipoEncuestas = DB::table('tipoEncuesta')->get();
+        $preguntasCerradas = $request->input("cerrada");
+        $titulo = $request->input('titulo');
+        $tipoEcuesta = $request->input("tipoEncuesta");
+        $arreglo = $request->input("radios2");
+        
+        $valorEntradas = count($arreglo);
+
+        $user = \App\preguntas::find($id);
+        $user->name = $nombre;
+        $user->email = $correo;
+        $user->save();
+
+        return redirect('home');
+       
+    }
+    public function edit($titulo){
+        $title = trim($titulo);
+        $preguntas = DB::table('preguntas')->where('titulo','=',$title)->get();
+        return view('encuesta.actualizarEncuesta', compact('preguntas'));
+    }
+    /*ELIMINAR ENCUESTA*/
+    public function delete($titulo){
+
+        $title = trim($titulo);
+        $idPreguntas = DB::table('preguntas')->where('tipoPregunta','=',"Cerradas")->pluck('idPregunta');
+        $count = DB::table('preguntas')->where('tipoPregunta','=',"Cerradas")->count();
+
+        for($var= 0; $var < $count;$var++){
+
+            $op = \App\Opciones::find($idPreguntas[$var]);
+            \App\Opciones::where('idPregunta', '=', $idPreguntas[$var])->delete();
+            \App\Respuestas::where('idPregunta', '=', $idPreguntas[$var])->delete();
+            \App\preguntas::where('idPregunta', '=', $idPreguntas[$var])->delete();
+        }
+        
+        
+        
+        return redirect('home');
+    }
+
 }
+
