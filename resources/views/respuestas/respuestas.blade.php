@@ -51,11 +51,8 @@ body{
                          <br/>
                          <div class="col-md-12">
                          <fieldset id="cerrada-{{$pregunta->idPregunta}}">
-                         <label class="control-label" >Si</label>
-                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="Si">
-                         <label class="control-label" >No</label>
-                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="No">
-                         
+                         <label class="control-label" >{{$pregunta->opcion}}</label>
+                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="{{$pregunta->opcion}}">
                          </fieldset>
                          </div>
                          <br/>

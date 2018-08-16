@@ -1,4 +1,4 @@
-@include('helper.header_')
+
 
 <style>
 body{
@@ -11,7 +11,7 @@ body{
 <div class="container">
    <div class="container-fluid">
      <div class="page-header">
-     <h2 class="header-title">{{$titulo}}</h2>
+     <h2 class="header-title"></h2>
 <div class="header-sub-title">
 <nav class="breadcrumb breadcrumb-dash">
 </nav>
@@ -24,8 +24,8 @@ body{
 <div class="card-body">
 <div class="row">
  <div class="col-sm-12" id="main">
- <h2 class="header-title"><b>TITULO</b></h2>
-{!!Form::open(['route'=>'respuesta.store','method'=>'POST','class'=>'"m-t-15'])!!}
+ <h2 class="header-title"><b>{{$title}}</b></h2>
+
                  @foreach($preguntas as $indice => $pregunta)
                  <div class="form-row">
                  <div class="col-md-12">
@@ -35,6 +35,7 @@ body{
                          <div class="col-md-12">
                          <fieldset id="cerrada-{{$pregunta->idPregunta}}">
                          <label class="control-label" >{{$pregunta->nombre}}</label>
+                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="{{$pregunta->opcion}}">
                          </fieldset>
                          </div>
                          <br/>
@@ -44,8 +45,7 @@ body{
                  </div>
                  </div>
              @endforeach
-             <input type="submit" id="enviar" value="Enviar"  class="btn btn-dark" />
-             {!!Form::close()!!}
+             
   </div>
     </div>
      </div>
@@ -55,5 +55,5 @@ body{
    </div>
 
 
-@include('helper.footer')
+
    

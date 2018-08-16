@@ -90,13 +90,18 @@ class ExternoController extends Controller
 
         $genero = $request->input("genero");
         $titulo = $request->input("titulo");
-        //$tipoEncuesta = $request->input("tipoEncuesta");
-
+        
+        $opciones = DB::table('opciones as o')
+        ->join('preguntas as p','o.idPregunta','=','p.idPregunta')
+        ->get();
         
         $title =  trim($titulo);
-        $preguntas = DB::table('preguntas')
+        $preguntas = DB::table('preguntas as p')
+        ->join('opciones as o','p.idPregunta','=','o.idPregunta')
         ->where('titulo','=',$title)
         ->get();
+
+        
 
         $tipoEncuesta = DB::table('preguntas')
         ->select('tipoPregunta')

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use Log;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class UsuariosController extends Controller
 {
@@ -49,5 +51,24 @@ class UsuariosController extends Controller
         $usuarios = DB::table('users')->get();
         $user = \App\User::find($idUsuario);
         return view('usuarios.actualizarUsuario', compact('user'));
+    }
+
+
+    public function generarPdf($titulo){
+
+        $title =  trim($titulo);
+        $preguntas =  DB::table('respuestas as r')
+            ->join('preguntas as p','r.idPregunta','=','p.idPregunta')
+            ->join('opciones as o','p.idPregunta','=','o.idPregunta')
+            ->where('r.tipoPregunta','=','Cerradas')
+            //->where('r.titulo','=',$title)
+            ->get();
+
+        
+
+        $view =  \View::make('encuesta.cerradasM', compact('preguntas','title'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('respuesta.pdf');
     }
 }

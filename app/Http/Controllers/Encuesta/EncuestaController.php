@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 use DB;
-use Input;
+use Illuminate\Support\Facades\Input;
 
 class EncuestaController extends Controller
 {
@@ -35,8 +35,11 @@ class EncuestaController extends Controller
         $preguntasMixtas = $request->input("mixta");
         $titulo = $request->input('titulo');
         $tipoEcuesta = $request->input("tipoEncuesta");
+        $arreglo = $request->input("radios2");
+        
+        $valorEntradas = count($arreglo);
+        
 
-        return $preguntasCerradas;
         
         switch($tipoEcuesta){
             case "Abiertas":
@@ -54,14 +57,42 @@ class EncuestaController extends Controller
             case "Cerradas":
             
             $limite = 15;
+            
             for($var= 0; $var < $limite;$var++){
-               DB::table('preguntas')->insert([
+                $id= DB::table('preguntas')->insertGetId([
+                   'nombre' => $preguntasCerradas[$var],
+                   'titulo' =>  $titulo,
+                   'tipoPregunta' => 'Cerradas'
+               ]);
+
+                $myArray = explode('-', $arreglo[$var]);
+                //if($var == $myArray[$var]){
+                    DB::table('opciones')->insert([
+                        'opcion' => $myArray[1],
+                        'idPregunta' =>  $id
+                    ]);
+                //}
+
+               }
+            
+            //$myArray = explode('-', $arreglo[$i]);
+              /*$id= DB::table('preguntas')->insertGetId([
                    'nombre' => $preguntasCerradas[$var],
                    'titulo' =>  $titulo,
                    'tipoPregunta' => 'Cerradas'
                ]);
                }
-               return view('_Layout',compact('tipoEncuestas'));
+
+               for($i= 0; $i < $valorEntradas;$i++){
+                DB::table('opciones')->insert([
+                    'opcion' => $arreglo[$i],
+                    'idPregunta' =>  $id
+                ]);*/
+
+                //}
+                
+               
+            return view('_Layout',compact('tipoEncuestas'));
             break;
             case "Mixtas":
             $limite = 15;
@@ -81,12 +112,12 @@ class EncuestaController extends Controller
 
         $encuestas = DB::table('preguntas')
         ->where('tipoPregunta','=','Cerradas')
-        ->select('titulo','tipoPregunta')
+        ->select('titulo','tipoPregunta','idPregunta')
         ->orderBy('titulo', 'asc')
-        ->groupBy('titulo','tipoPregunta')
+        ->groupBy('titulo','tipoPregunta','idPregunta')
         ->get();
         
-        
+        return view('encuesta.verRespuestas',compact('encuestas'));
         
     }
 

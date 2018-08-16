@@ -36,7 +36,7 @@ Route::get('/getPreguntaByTipo/{tipo}', 'Encuesta\EncuestaController@getPregunta
 Route::post('ajaxRequest', 'Encuesta\Encuesta@ajaxRequestPost');
 
 Route::post('encuesta', 'Encuesta\EncuestaController@store')->name('encuesta.store');
-
+Route::get('/verRespuestas','Encuesta\EncuestaController@getEncuestasCerradas')->name('verRespuestas');
 
 
 
@@ -44,7 +44,7 @@ Route::post('encuesta', 'Encuesta\EncuestaController@store')->name('encuesta.sto
 Auth::routes();
 
 Route::get('/home','HomeController@index')->name('home');
-
+Route::get('/pdf/{titulo}','Usuarios\UsuariosController@generarPdf')->name('pdf');
 
 //Route::get('/getEncuestaByid/{titulo}', 'Encuesta\ExternoController@getEncuestaByid');
 Route::post('setEncuesta', 'Encuesta\ExternoController@getEncuestaByid')->name('setEncuesta.store');

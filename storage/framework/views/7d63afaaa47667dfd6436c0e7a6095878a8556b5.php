@@ -167,8 +167,10 @@
 			<!--<li><a href="#" class="icon-facebook">Agregar Opción</a></li>-->
 		</ul>
 	</div>
+    <div id="arreglo"></div>
         <?php echo Form::close(); ?>
 
      </div>
  </div>
  <?php echo $__env->make('modals.preguntas', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ 

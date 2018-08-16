@@ -20,6 +20,13 @@
                                     <a href="inicio">Crear Encuesta</a>
                                 </li>
                             </ul>
+                            <?php if(Auth::user()->tipoUsuario=='visitante'): ?>
+                            <ul class="dropdown-menu">
+                                <li class="active">
+                                    <a href="">Generar PDF</a>
+                                </li>
+                            </ul>
+                            <?php endif; ?>
                         </li>
                         <?php if(Auth::user()->tipoUsuario=='admin'): ?>
                         <li class="nav-item dropdown">

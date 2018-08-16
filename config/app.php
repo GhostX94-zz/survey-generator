@@ -213,6 +213,7 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Html' => 'Collective\Html\HtmlFacade',
         'PDF' => 'Vsmoraes\Pdf\PdfFacade',
+        'Input' => Illuminate\Support\Facades\Input::class,
 
     ],
 
