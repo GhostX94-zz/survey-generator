@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Encuesta;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
+use Illuminate\Support\Collection;
 use DB;
 
 class ExternoController extends Controller
@@ -97,13 +99,13 @@ class ExternoController extends Controller
         
         $title =  trim($titulo);
         $count = $preguntas = DB::table('preguntas as p')->count();
-        $preguntas = DB::table('preguntas as p')
+       /* $preguntas = DB::table('preguntas as p')
         ->select('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta','o.id','o.opcion','o.idPregunta as preguntaID')
         ->join('opciones as o','p.idPregunta','=','o.idPregunta')
         ->where('p.titulo','=',$title)
         ->orderBy('o.opcion', 'asc')
         ->groupBy('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta','o.id','o.opcion','preguntaID')
-        ->get();
+        ->get();*/
 
         $tipoEncuesta = DB::table('preguntas')
         ->select('tipoPregunta')
@@ -114,8 +116,48 @@ class ExternoController extends Controller
         $totalPreguntas = DB::table('preguntas')
         ->where('titulo','=',$title)
         ->count();
+
+        $totalOpciones = DB::table('opciones')->count();
+
+        $radiobuttons = DB::table('opciones')
+        ->select('opcion','idPregunta')
+        //->groupBy('opcion','idPregunta')
+        ->get();
+
+
+        $list=array();
+        $preguntas = DB::table('preguntas as p')
+        ->select('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta')
+        //->join('opciones as o','p.idPregunta','=','o.idPregunta')
+        ->where('p.titulo','=',$title)
+        //->groupBy('p.idPregunta','p.nombre','p.titulo','p.tipoPregunta','o.id','o.opcion','preguntaID')
+        ->get();
+
+       /* $collection = Collection::make($preguntas);
+        //$ok =  $collection->toJson();
+        $idP = 0;
+        for($i= 0; $i < $totalOpciones;$i++){
+            $idP = $collection[$i]->idPregunta;
+
+            if($collection[$i]->idPregunta ==  $idP){
+
+                $opcion  = $collection[$i]->opcion;
+                array_push($list,$collection[$i]);
+                array_push($list,$opcion);
+                $idP = 0;
+            }else{
+                $idP = $collection[$i]->idPregunta;
+            }
+            
+             //$idP = 0;
+        }*/
+       //   $preguntas =  $list;
+
+
+
         
         
-        return view('respuestas.respuestas',compact('preguntas','titulo','totalPreguntas','genero','tipoEncuesta'));
+        
+        return view('respuestas.respuestas',compact('preguntas','titulo','totalPreguntas','genero','tipoEncuesta','conteo','radiobuttons'));
     }
 }

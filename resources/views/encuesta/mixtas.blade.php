@@ -17,6 +17,7 @@
                <label class="control-label">Pregunta 1</label>
              </div>
              <input type="text" class="form-control" id="p1" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -26,6 +27,7 @@
                <label class="control-label">Pregunta 2</label>
              </div>
              <input type="text" class="form-control" id="p2" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -35,6 +37,7 @@
                <label class="control-label">Pregunta 3</label>
              </div>
              <input type="text" class="form-control" id="p3" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -44,6 +47,7 @@
                <label class="control-label">Pregunta 4</label>
              </div>
              <input type="text" class="form-control" id="p4" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -53,6 +57,7 @@
                <label class="control-label">Pregunta 5</label>
              </div>
              <input type="text" class="form-control" id="p5" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -62,6 +67,7 @@
                <label class="control-label">Pregunta 6</label>
              </div>
              <input type="text" class="form-control" id="p6" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -71,6 +77,7 @@
                <label class="control-label">Pregunta 7</label>
              </div>
              <input type="text" class="form-control" id="p7" name="mixta[]">
+             <input type="button" id="p1" value="+" name="Pregunta 1" class="btn btn-dark" data-toggle="modal" onclick="showModal(this)"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -147,6 +154,7 @@
         </div>
             </div>
              <input type="submit" id="generar" value="Generar" onclick="" class="bt btn btn-success" />
+             <div id="arreglo"></div>
         {!!Form::close()!!}
      </div>
  </div

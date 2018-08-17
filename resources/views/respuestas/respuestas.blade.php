@@ -43,20 +43,22 @@ body{
                  </div>
                  @endif
 
-                 @if($pregunta->tipoPregunta == "Cerradas")
+                 @if($pregunta->tipoPregunta == "Cerradas") 
                  <div class="form-row">
                  <div class="col-md-12">
                      <div class="form-group">
                      <label class="control-label" style="border-radius: 15px 50px;background: #ffff;padding: 20px;width: 250px; height: 15px; ">{{$indice+1}}.- {{$pregunta->nombre}}</label>
                          <br/>
-                         @if($pregunta->idPregunta == $pregunta->preguntaID)
+                         @foreach($radiobuttons as $indice => $radio)
+                         @if($pregunta->idPregunta == $radio->idPregunta)
                          <div class="col-md-12">
-                         <fieldset id="cerrada-{{$pregunta->idPregunta}}">
-                         <label class="control-label" >{{$pregunta->opcion}}</label>
-                         <input  name="cerrada[]-{{$pregunta->idPregunta}}" type="radio" value="{{$pregunta->opcion}}">
+                         <fieldset id="cerrada-{{$radio->idPregunta}}">
+                         <label class="control-label" >{{$radio->opcion}}</label>
+                         <input  name="cerrada[]-{{$radio->idPregunta}}" type="radio" value="{{$radio->opcion}}">
                          </fieldset>
                          </div>
                          @endif
+                         @endforeach
                          <br/>
                          <div class="col-md-12">
                          </div>
