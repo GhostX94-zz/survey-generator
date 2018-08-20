@@ -23,7 +23,7 @@
                             @if(Auth::user()->tipoUsuario=='visitante')
                             <ul class="dropdown-menu">
                                 <li class="active">
-                                    <a href="">Generar PDF</a>
+                                    <a href="pdf/CUAL ES TU COMIDA FAVORITA">Generar PDF</a>
                                 </li>
                             </ul>
                             <ul class="dropdown-menu">

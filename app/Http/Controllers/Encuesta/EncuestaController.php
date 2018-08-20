@@ -255,19 +255,28 @@ class EncuestaController extends Controller
     /*EDITAR ENCUESTA*/
     public function update(Request $request){
 
-        return redirect('home');
+        //return redirect('home');
         $tipoEncuestas = DB::table('tipoEncuesta')->get();
         $preguntasCerradas = $request->input("cerrada");
         $titulo = $request->input('titulo');
         $tipoEcuesta = $request->input("tipoEncuesta");
         $arreglo = $request->input("radios2");
         
-        $valorEntradas = count($arreglo);
+        $valorEntradas = count($preguntasCerradas);
 
-        $user = \App\preguntas::find($id);
+        for($i= 0; $i < $valorEntradas;$i++){
+             DB::table('preguntas')
+             ->where('idPregunta','=',$i)
+             ->update([
+                 'nombre' => $preguntasCerradas[$i],
+             ]);
+             
+            }
+
+       /* $user = \App\preguntas::find($id);
         $user->name = $nombre;
         $user->email = $correo;
-        $user->save();
+        $user->save();*/
 
         return redirect('home');
        
