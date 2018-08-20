@@ -369,6 +369,8 @@ class ComposerStaticInitec456a43a468ff34114ecb237b9b787b
     );
 
     public static $classMap = array (
+        'App\\Charts\\SampleChart' => __DIR__ . '/../..' . '/app/Charts/SampleChart.php',
+        'App\\Charts\\grafica' => __DIR__ . '/../..' . '/app/Charts/grafica.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
